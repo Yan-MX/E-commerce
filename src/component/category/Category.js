@@ -4,10 +4,10 @@ import Posters from "./Posters";
 import Jumbotron from "react-bootstrap/Jumbotron";
 const Category = () => {
   return (
-    <Jumbotron>
+    <div>
       <Posters />
       <Cards />
-    </Jumbotron>
+    </div>
   );
 };
 
