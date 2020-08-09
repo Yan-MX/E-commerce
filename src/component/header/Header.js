@@ -4,7 +4,7 @@ import Sex from "./Sex";
 import MyAccount from "./MyAccount";
 import WishingList from "./WishingList";
 import Cart from "./Cart";
-import Logo from "./logo5.png";
+import Logo from "./pomeranian.png";
 import styled from "@emotion/styled";
 import { useMediaQuery } from "react-responsive";
 function Header() {
@@ -16,7 +16,7 @@ function Header() {
   });
   let Screen = styled.div``;
   let Img = styled.img`
-    width: 120px;
+    width: 80px;
     height: 60px;
     align-items: center;
     margin-left: 18px;
