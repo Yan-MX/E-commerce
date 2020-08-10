@@ -1,8 +1,10 @@
 import React from "react";
-const Cards = () => {
+const Cards = ({ data }) => {
   return (
     <div>
-      <h2>Cards</h2>
+      <p>{data.name}</p>
+      <p>{data.listprice} kr</p>
+      <p>{data.saleprice} kr</p>
     </div>
   );
 };

@@ -7,6 +7,9 @@ import Cart from "./Cart";
 import Logo from "./pomeranian.png";
 import styled from "@emotion/styled";
 import { useMediaQuery } from "react-responsive";
+import Search from "./Search";
+import Section from "./Section";
+
 function Header() {
   const isBiggerScreen = useMediaQuery({
     query: "(min-width: 800px)",
@@ -16,17 +19,24 @@ function Header() {
   });
   let Screen = styled.div``;
   let Img = styled.img`
-    width: 80px;
+    width: 60px;
     height: 60px;
     align-items: center;
     margin-left: 18px;
-    margin-top: 4px;
+    margin-top: 14px;
   `;
   let Sections = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 0 50px;
+    padding: 0;
+  `;
+  let Sections2 = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 60px;
   `;
   let Container = styled.div`
     display: flex;
@@ -48,20 +58,28 @@ function Header() {
               <Cart />
             </Container>
           </Sections>
+          <Sections>
+            <Section />
+            <Search />
+          </Sections>
         </div>
       )}
       {isMidiumScreen && (
         <div>
           <Slogan />
-          <Sections>
+          <Sections2>
             <Sex />
             <Img src={Logo} alt="logo" />
-          </Sections>
-          <Container>
+          </Sections2>
+          <Sections2>
             <MyAccount />
             <WishingList />
             <Cart />
-          </Container>
+          </Sections2>
+          <Sections2>
+            <Section />
+            <Search />
+          </Sections2>
         </div>
       )}
     </Screen>
