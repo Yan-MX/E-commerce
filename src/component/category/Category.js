@@ -70,8 +70,8 @@ const Category = () => {
         <Img src={bg1} />
 
         <Text1>
-          lighter & faster <br />
-          empowering your marathon running
+          Lighter & Faster <br />
+          Empowering your marathon running
         </Text1>
       </Div>
       <Container>

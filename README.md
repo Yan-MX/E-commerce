@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm start`
+### `npm run startd`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -66,3 +66,15 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+## CI with [Travis-CI.org](https://travis-ci.org/) and auto-deploy to Heroku
+
+This article contain a good guide to set up CI https://dev.to/michalhonc/set-up-continuous-deploy-for-free-with-react-github-travis-and-heroku-381b.
+
+> Note that there is a bug in the article regarding how to generate api-key value, and you will get **invalid option "--api_key="** error in Travis when deploying to Heroku.
+
+The correct way to generate the api-key can be found in https://www.johnvincent.io/general/travis-heroku-ci/ under **Travis Build Error** section
+
+> Also note that it is important to use serve package, otherwise Heroku deployment would fail with **heroku: at=error code=H10 desc="App crashed"**
+
+This change will break the local npm start, so the default npm start is changed to **npm run startd** instead for local testing.
