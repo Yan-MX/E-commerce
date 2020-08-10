@@ -45,9 +45,9 @@ const Category = () => {
     width: 100%;
     max-height: 400px;
   `;
-  let P = styled.p`
-    color: whitesmoke;
-  `;
+  //let P = styled.p`
+  //  color: whitesmoke;
+  //`;
   let num = 0;
   let data = Data.map((data) => ({
     key: num++,
