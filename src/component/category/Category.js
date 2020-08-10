@@ -62,7 +62,7 @@ const Category = () => {
     reviews: data.Reviews,
     images: data.Images.slice(1, -1),
   }));
-  console.log("image now is", 1, data[0].images.split(",")[0]);
+  //console.log("image now is", 1, data[0].images.split(",")[0]);
 
   return (
     <div>
@@ -71,12 +71,12 @@ const Category = () => {
 
         <Text1>
           lighter & faster <br />
-          <P>empowering your marathon running</P>
+          empowering your marathon running
         </Text1>
       </Div>
       <Container>
         {data.slice(0, 8).map((d) => (
-          <SmallContainer>
+          <SmallContainer key={d.id}>
             <Posters bg={d.images.split(",")[0].slice(1, -1)} />
             <Cards data={d} />
           </SmallContainer>
