@@ -1,7 +1,13 @@
 import React from "react";
 import styled from "@emotion/styled";
 import bg1 from "../../mockup/giftcard.png";
+import { useMediaQuery } from "react-responsive";
 const Giftcard = () => {
+  const isMidiumScreen = useMediaQuery({
+    query: "(min-width: 800px)",
+  });
+  const a = "2.5vw";
+  const b = "1.5vw";
   let Img = styled.img`
     width: 100%;
     max-height: 400px;
@@ -13,13 +19,13 @@ const Giftcard = () => {
   `;
   let H2 = styled.h2`
     position: absolute;
-    top: 40%;
+    top: 30%;
     left: 30%;
 
     transform: translate(-50%, -50%);
     color: white;
     margin-left: 50px;
-    font-size: 2vw;
+    font-size: ${isMidiumScreen ? a : b};
     height: auto;
     text-align: center;
     font-weight: bold;
@@ -29,7 +35,7 @@ const Giftcard = () => {
   `;
   let Button = styled.button`
     position: absolute;
-    width: 200px;
+    width: 15vw;
     top: 75%;
     left: 30%;
     background-color: whitesmoke;

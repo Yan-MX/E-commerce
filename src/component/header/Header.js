@@ -10,7 +10,7 @@ import { useMediaQuery } from "react-responsive";
 import Search from "./Search";
 import Section from "./Section";
 
-function Header() {
+function Header({ setScreen }) {
   const isBiggerScreen = useMediaQuery({
     query: "(min-width: 800px)",
   });
@@ -24,6 +24,13 @@ function Header() {
     align-items: center;
     margin-left: 18px;
     margin-top: 14px;
+  `;
+  let ImgSmall = styled.img`
+    width: 30px;
+    height: 30px;
+    align-items: center;
+    margin-left: 8px;
+    margin-top: 10px;
   `;
   let Sections = styled.div`
     display: flex;
@@ -43,6 +50,10 @@ function Header() {
     justify-content: space-around;
     align-items: center;
   `;
+  const ClickHandler = (e) => {
+    console.log("back to main");
+    setScreen(true);
+  };
 
   return (
     <Screen>
@@ -51,7 +62,7 @@ function Header() {
           <Slogan />
           <Sections>
             <Sex />
-            <Img src={Logo} alt="logo" />
+            <Img src={Logo} alt="logo" onClick={ClickHandler} />
             <Container>
               <MyAccount />
               <WishingList />
@@ -69,7 +80,7 @@ function Header() {
           <Slogan />
           <Sections2>
             <Sex />
-            <Img src={Logo} alt="logo" />
+            <ImgSmall src={Logo} alt="logo" onClick={ClickHandler} />
           </Sections2>
           <Sections2>
             <MyAccount />

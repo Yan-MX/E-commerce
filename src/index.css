@@ -5,11 +5,11 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #d4e6f1;
+  background-color: rgba(0, 80, 134, 0.5);
 }
 .headl1 {
   text-transform: uppercase !important;
-  color: #005086;
+  color: whitesmoke;
   text-decoration: underline;
-  margin: 0 50px;
+  margin: 20px 50px;
 }

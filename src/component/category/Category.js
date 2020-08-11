@@ -1,11 +1,9 @@
 import React from "react";
 import Cards from "./Cards";
 import Posters from "./Posters";
-import Data from "../../mockup/MockupDataWith100Items.json";
-import bg1 from "../../mockup/bg1.png";
 import styled from "@emotion/styled";
-
-const Category = () => {
+import Data from "../../mockup/MockupDataWith100Items.json";
+const Category = ({ num1, num2, setScreen, setID }) => {
   let Container = styled.div`
     display: flex;
     flex-direction: row;
@@ -16,38 +14,10 @@ const Category = () => {
     position: relative;
     text-align: center;
   `;
-  let Div = styled.div`
-    position: relative;
-    text-align: center;
-  `;
-
-  let Text1 = styled.p`
-    position: absolute;
-    top: 50%;
-    left: 70%;
-
-    transform: translate(-50%, -50%);
-    color: rgba(0, 80, 134, 0.8);
-    margin-left: 50px;
-    font-size: 2.3vw;
-    height: auto;
-    text-align: center;
-    font-weight: bold;
-    border-radius: 5px;
-    text-transform: uppercase;
-    margin-top: 30px;
-  `;
 
   let SmallContainer = styled.div`
     display: inline-block;
   `;
-  let Img = styled.img`
-    width: 100%;
-    max-height: 400px;
-  `;
-  //let P = styled.p`
-  //  color: whitesmoke;
-  //`;
   let num = 0;
   let data = Data.map((data) => ({
     key: num++,
@@ -62,22 +32,20 @@ const Category = () => {
     reviews: data.Reviews,
     images: data.Images.slice(1, -1),
   }));
-  //console.log("image now is", 1, data[0].images.split(",")[0]);
+  const ClickHandler = (e) => {
+    setID(e.target.id);
+    console.log("target", e.target);
+
+    console.log("changed id", e.target.id);
+    setScreen(false);
+  };
 
   return (
     <div>
-      <Div>
-        <Img src={bg1} />
-
-        <Text1>
-          Lighter & Faster <br />
-          Empowering your marathon running
-        </Text1>
-      </Div>
       <Container>
-        {data.slice(0, 8).map((d) => (
-          <SmallContainer key={d.id}>
-            <Posters bg={d.images.split(",")[0].slice(1, -1)} />
+        {data.slice(num1, num2).map((d) => (
+          <SmallContainer key={d.id} id={d.id} onClick={ClickHandler}>
+            <Posters data={d} bg={d.images.split(",")[0].slice(1, -1)} />
             <Cards data={d} />
           </SmallContainer>
         ))}

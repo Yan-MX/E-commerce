@@ -7,7 +7,7 @@ const Section = () => {
   const isBiggerScreen = useMediaQuery({
     query: "(min-width: 800px)",
   });
-  const isMidiumScreen = useMediaQuery({
+  const isMediumScreen = useMediaQuery({
     query: "(max-width: 800px)",
   });
   let Container = styled.div`
@@ -77,7 +77,7 @@ const Section = () => {
           <P>On Sale</P>
         </Container>
       )}
-      {isMidiumScreen && (
+      {isMediumScreen && (
         <div>
           <Container2 className="navbar">
             <div className="dropdown">

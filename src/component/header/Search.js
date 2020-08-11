@@ -4,6 +4,7 @@ import { FcSearch } from "react-icons/fc";
 const Search = () => {
   let Container = styled.div`
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     padding-top: 14px;
