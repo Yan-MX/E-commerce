@@ -7,7 +7,7 @@ import MiddleSection from "./component/category/MiddleSection";
 import Giftcard from "./component/footer/Giftcard";
 import ProductInfo from "./component/product/productInfo";
 import ScrollToTop from "react-scroll-to-top";
-import { ReactComponent as Pom } from "./component/header/pomeranian.png";
+
 function App() {
   const [screen, setScreen] = useState(true);
   const [id, setID] = useState("");

@@ -32,7 +32,7 @@ const ProductInfo = ({ id }) => {
         <Carousel>
           {data.images.split(",").map((pic) => (
             <div key={pic}>
-              <img src={pic.slice(1, -1)} />
+              <img src={pic.slice(1, -1)} alt="product" />
               <p className="legend"></p>
             </div>
           ))}
