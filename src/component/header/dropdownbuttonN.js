@@ -84,10 +84,10 @@ const Section = () => {
                 Category
               </button>
               <div className="dropdown-content">
-                <a href="#">New Arrival</a>
-                <a href="#">Running</a>
-                <a href="#">Training</a>
-                <a href="#">On Sale</a>
+                <a href="#Link">New Arrival</a>
+                <a href="#Link">Running</a>
+                <a href="#Link">Training</a>
+                <a href="#Link">On Sale</a>
               </div>
             </div>
           </Container2>

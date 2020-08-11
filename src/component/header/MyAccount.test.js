@@ -1,8 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from "@testing-library/react";
 import MyAccount from "./MyAccount";
 
-it("renders without crashing", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<MyAccount />, div);
+describe("Test component", () => {
+  test("renders without crashing", () => {
+    render(<MyAccount />);
+  });
+
+  test("has My Account text", () => {
+    const { getByText } = render(<MyAccount />);
+    expect(getByText(/My Account/)).toBeInTheDocument();
+  });
 });
