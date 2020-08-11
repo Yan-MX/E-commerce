@@ -9,7 +9,7 @@ const WishingList = () => {
   return (
     <Container>
       <FcLike />
-      <p>Wishing List</p>
+      <p>WishingList</p>
     </Container>
   );
 };
