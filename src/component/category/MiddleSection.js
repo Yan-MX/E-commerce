@@ -6,7 +6,7 @@ import { useMediaQuery } from "react-responsive";
 import styled from "@emotion/styled";
 import Category from "./Category";
 
-const MiddleSection = ({ setScreen, setID }) => {
+const MiddleSection = ({ setScreen, setID, setWishingList }) => {
   const isMidiumScreen = useMediaQuery({
     query: "(min-width: 800px)",
   });
@@ -48,20 +48,50 @@ const MiddleSection = ({ setScreen, setID }) => {
         <Text1>Empowering your marathon running</Text1>
       </Div>
 
-      <Category num1="0" num2="8" setID={setID} setScreen={setScreen} />
+      <Category
+        num1="0"
+        num2="8"
+        setID={setID}
+        setScreen={setScreen}
+        setWishingList={setWishingList}
+      />
 
       <Div>
         <Img src={bg2} alt="background photo" />
         <Text1>Nature is pleased with simplicity</Text1>
       </Div>
-      <Category num1="34" num2="42" setScreen={setScreen} setID={setID} />
-      <Category num1="50" num2="58" setID={setID} setScreen={setScreen} />
+      <Category
+        num1="34"
+        num2="42"
+        setScreen={setScreen}
+        setID={setID}
+        setWishingList={setWishingList}
+      />
+      <Category
+        num1="50"
+        num2="58"
+        setID={setID}
+        setScreen={setScreen}
+        setWishingList={setWishingList}
+      />
       <Div>
         <Img src={bg3} alt="background photo" />
         <Text1>home quarantine workout</Text1>
       </Div>
-      <Category num1="70" num2="78" setID={setID} setScreen={setScreen} />
-      <Category num1="80" num2="88" setID={setID} setScreen={setScreen} />
+      <Category
+        num1="70"
+        num2="78"
+        setID={setID}
+        setScreen={setScreen}
+        setWishingList={setWishingList}
+      />
+      <Category
+        num1="80"
+        num2="88"
+        setID={setID}
+        setScreen={setScreen}
+        setWishingList={setWishingList}
+      />
     </div>
   );
 };

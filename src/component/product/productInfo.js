@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import styled from "@emotion/styled";
 import Product from "./Product";
 import { useMediaQuery } from "react-responsive";
 import Data1 from "../../mockup/Data";
-const ProductInfo = ({ id }) => {
+const ProductInfo = ({ cart, setCart, id, setWishingList, WishingList }) => {
   const isMidiumScreen = useMediaQuery({
     query: "(min-width: 800px)",
   });
+  const [like, setLike] = useState(false);
   const a = "row";
   const b = "column";
+  const c = "50%;";
+  const d = "100%";
   let Container = styled.div`
     margin: 100px;
     width: 90%;
@@ -19,7 +22,7 @@ const ProductInfo = ({ id }) => {
     flex-direction: ${isMidiumScreen ? a : b};
   `;
   let Left = styled.div`
-    width: 50%;
+    width: ${isMidiumScreen ? d : c};
   `;
 
   let data = Data1.filter((data) => {
@@ -39,7 +42,14 @@ const ProductInfo = ({ id }) => {
         </Carousel>
       </Left>
       <Left>
-        <Product data={data} />
+        <Product
+          like={like}
+          setLike={setLike}
+          data={data}
+          setWishingList={setWishingList}
+          WishingList={WishingList}
+          setCart={setCart}
+        />
       </Left>
     </Container>
   );

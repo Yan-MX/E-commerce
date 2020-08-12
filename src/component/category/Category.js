@@ -3,7 +3,7 @@ import Cards from "./Cards";
 import Posters from "./Posters";
 import styled from "@emotion/styled";
 import Data from "../../mockup/MockupDataWith100Items.json";
-const Category = ({ num1, num2, setScreen, setID }) => {
+const Category = ({ num1, num2, setScreen, setID, setWishingList }) => {
   let Container = styled.div`
     display: flex;
     flex-direction: row;
@@ -34,9 +34,7 @@ const Category = ({ num1, num2, setScreen, setID }) => {
   }));
   const ClickHandler = (e) => {
     setID(e.target.id);
-    console.log("target", e.target);
 
-    console.log("changed id", e.target.id);
     setScreen(false);
   };
 
@@ -45,7 +43,11 @@ const Category = ({ num1, num2, setScreen, setID }) => {
       <Container>
         {data.slice(num1, num2).map((d) => (
           <SmallContainer key={d.id} id={d.id} onClick={ClickHandler}>
-            <Posters data={d} bg={d.images.split(",")[0].slice(1, -1)} />
+            <Posters
+              data={d}
+              bg={d.images.split(",")[0].slice(1, -1)}
+              setWishingList={setWishingList}
+            />
             <Cards data={d} />
           </SmallContainer>
         ))}

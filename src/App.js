@@ -11,18 +11,30 @@ import ScrollToTop from "react-scroll-to-top";
 function App() {
   const [screen, setScreen] = useState(true);
   const [id, setID] = useState("");
+  const [WishingList, setWishingList] = useState([]);
+  const [cart, setCart] = useState(["aaa", "bbb"]);
   return (
     <div className="App">
       <ScrollToTop smooth color="salmon" />
       <Header setScreen={setScreen} />
       {screen ? (
         <div>
-          <MiddleSection setScreen={setScreen} setID={setID} />
+          <MiddleSection
+            setScreen={setScreen}
+            setID={setID}
+            setWishingList={setWishingList}
+          />
           <Giftcard />
         </div>
       ) : (
         <div>
-          <ProductInfo id={id} />
+          <ProductInfo
+            id={id}
+            setWishingList={setWishingList}
+            WishingList={WishingList}
+            cart={cart}
+            setCart={setCart}
+          />
         </div>
       )}
       <Footer />

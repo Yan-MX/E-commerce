@@ -26,11 +26,11 @@ const Contacts = () => {
   `;
   let Alink = styled.a`
     color: white;
-    font-size: 1.6vw;
+    font-size: 2.4vh;
   `;
   let P = styled.div`
     font-weight: bold;
-    font-size: 1.7vw;
+    font-size: 2.6vh;
     color: whitesmoke;
   `;
   return (
