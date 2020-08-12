@@ -35,7 +35,7 @@ const Category = ({ num1, num2, setScreen, setID, setWishingList }) => {
   const ClickHandler = (e) => {
     setID(e.target.id);
 
-    setScreen(false);
+    setScreen("product");
   };
 
   return (

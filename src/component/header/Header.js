@@ -51,8 +51,7 @@ function Header({ setScreen }) {
     align-items: center;
   `;
   const ClickHandler = (e) => {
-    console.log("back to main");
-    setScreen(true);
+    setScreen("main");
   };
 
   return (
@@ -64,9 +63,9 @@ function Header({ setScreen }) {
             <Sex />
             <Img src={Logo} alt="logo" onClick={ClickHandler} />
             <Container>
-              <MyAccount />
-              <WishingList />
-              <Cart />
+              <MyAccount setScreen={setScreen} />
+              <WishingList setScreen={setScreen} />
+              <Cart setScreen={setScreen} />
             </Container>
           </Sections>
           <Sections>
@@ -83,9 +82,9 @@ function Header({ setScreen }) {
             <ImgSmall src={Logo} alt="logo" onClick={ClickHandler} />
           </Sections2>
           <Sections2>
-            <MyAccount />
-            <WishingList />
-            <Cart />
+            <MyAccount setScreen={setScreen} />
+            <WishingList setScreen={setScreen} />
+            <Cart setScreen={setScreen} />
           </Sections2>
           <Sections2>
             <Section />
