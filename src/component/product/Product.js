@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "@emotion/styled";
 import { FcLike, FcLikePlaceholder } from "react-icons/fc";
 import { IconContext } from "react-icons";

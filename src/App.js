@@ -28,7 +28,6 @@ function App() {
             <Giftcard />
           </div>
         );
-        break;
       case "product":
         return (
           <div>
@@ -41,7 +40,6 @@ function App() {
             />
           </div>
         );
-        break;
       case "wish":
         return (
           <div>

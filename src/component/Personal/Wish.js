@@ -63,6 +63,7 @@ const Wish = ({ WishingList, setID, setScreen }) => {
     } else {
       WishingList.map((item) => {
         array1.push(Data.filter((data) => data.id === item)[0]);
+        return array1;
       });
     }
   };

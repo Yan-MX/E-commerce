@@ -29,6 +29,7 @@ const Posters = ({ bg, data, setWishingList }) => {
     transform: translate(-50%, -50%);
   `;
   const ClickHandler = (e) => {
+    // Fix the code later
     like
       ? setWishingList((wishinglist) =>
           wishinglist.filter((d) => !d.id === e.target.id)
@@ -40,9 +41,11 @@ const Posters = ({ bg, data, setWishingList }) => {
   return (
     <BigContainer>
       <Img src={bg} id={data.id} alt="Product Picture" />
-      {/* <Container onClick={ClickHandler} id={data.id}>
-        {like ? <FcLike id={data.id} /> : <FcLikePlaceholder id={data.id} />}
-      </Container> */}
+      {
+        <Container onClick={ClickHandler} id={data.id}>
+          {like ? <FcLike id={data.id} /> : <FcLikePlaceholder id={data.id} />}
+        </Container>
+      }
     </BigContainer>
   );
 };
