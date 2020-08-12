@@ -29,7 +29,7 @@ const ProductInfo = ({ cart, setCart, id, setWishingList, WishingList }) => {
     return data.id === id;
   })[0];
   console.log(id);
-  return (
+  return typeof data !== "undefined" && data !== null ? (
     <Container>
       <Left>
         <Carousel>
@@ -52,6 +52,8 @@ const ProductInfo = ({ cart, setCart, id, setWishingList, WishingList }) => {
         />
       </Left>
     </Container>
+  ) : (
+    <Container>No product data</Container>
   );
 };
 export default ProductInfo;

@@ -38,7 +38,7 @@ const Posters = ({ bg, data, setWishingList }) => {
     console.log("handler a click of like");
     setLike((value) => !value);
   };
-  return (
+  return typeof data !== "undefined" && data !== null ? (
     <BigContainer>
       <Img src={bg} id={data.id} alt="Product Picture" />
       {
@@ -47,6 +47,8 @@ const Posters = ({ bg, data, setWishingList }) => {
         </Container>
       }
     </BigContainer>
+  ) : (
+    <BigContainer>No product data</BigContainer>
   );
 };
 

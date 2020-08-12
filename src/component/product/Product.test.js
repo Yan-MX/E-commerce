@@ -1,9 +1,9 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import Slogan from "./Slogan";
+import Product from "./Product";
 
 describe("Test component", () => {
   test("renders without crashing", () => {
-    render(<Slogan />);
+    render(<Product />);
   });
 });

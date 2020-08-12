@@ -95,7 +95,7 @@ const Product = ({
   const handleSizeChange = (e) => {
     setSize(e.target.value);
   };
-  return (
+  return typeof data !== "undefined" && data !== null ? (
     <Container>
       <P>{data.name}</P>
       <p>
@@ -132,6 +132,10 @@ const Product = ({
           </SContainer>
         </Div2>
       </Bg>
+    </Container>
+  ) : (
+    <Container>
+      <P2>No product data</P2>
     </Container>
   );
 };

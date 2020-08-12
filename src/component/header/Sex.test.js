@@ -1,8 +1,16 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from "@testing-library/react";
 import Sex from "./Sex";
 
-it("renders without crashing", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<Sex />, div);
+describe("Test component", () => {
+  test("renders without crashing", () => {
+    render(<Sex />);
+  });
+
+  test("has category text", () => {
+    const { getByText } = render(<Sex />);
+    expect(getByText("WOMEN")).toBeInTheDocument();
+    expect(getByText("MEN")).toBeInTheDocument();
+    expect(getByText("CHILDREN")).toBeInTheDocument();
+  });
 });

@@ -1,8 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from "@testing-library/react";
 import WishingList from "./WishingList";
 
-it("renders without crashing", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<WishingList />, div);
+describe("Test component", () => {
+  test("renders without crashing", () => {
+    render(<WishingList />);
+  });
+
+  test("has Wishing List text", () => {
+    const { getByText } = render(<WishingList />);
+    expect(getByText(/Wishing List/)).toBeInTheDocument();
+  });
 });

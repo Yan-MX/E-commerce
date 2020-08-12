@@ -1,8 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from "@testing-library/react";
 import Cart from "./Cart";
 
-it("renders without crashing", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(<Cart />, div);
+describe("Test component", () => {
+  test("renders without crashing", () => {
+    render(<Cart />);
+  });
+
+  test("has Shopping Cart text", () => {
+    const { getByText } = render(<Cart />);
+    expect(getByText(/Shopping Cart/)).toBeInTheDocument();
+  });
 });
