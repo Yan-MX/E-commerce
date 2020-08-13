@@ -27,7 +27,7 @@ const SearchQueryProcessor = ({ query, setID, setScreen, setWishingList }) => {
       {array.map((i) => {
         return (
           <Category
-            key="i"
+            key={i}
             num1="0"
             num2="8"
             dataSet={

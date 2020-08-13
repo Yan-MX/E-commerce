@@ -46,7 +46,7 @@ const Search = ({ setScreen, setQuery }) => {
         <Input
           ref={inputRef}
           type="text"
-          placeholder="Search"
+          placeholder="Item to search"
           value={input}
           onChange={handlerChange}
         />

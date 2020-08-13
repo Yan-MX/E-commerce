@@ -25,6 +25,7 @@ function App() {
             <MiddleSection
               setScreen={setScreen}
               setID={setID}
+              WishingList={WishingList}
               setWishingList={setWishingList}
             />
           </div>

@@ -6,7 +6,7 @@ import { useMediaQuery } from "react-responsive";
 import styled from "@emotion/styled";
 import Category from "./Category";
 
-const MiddleSection = ({ setScreen, setID, setWishingList }) => {
+const MiddleSection = ({ setScreen, setID, WishingList, setWishingList }) => {
   const isMidiumScreen = useMediaQuery({
     query: "(min-width: 800px)",
   });
@@ -54,6 +54,7 @@ const MiddleSection = ({ setScreen, setID, setWishingList }) => {
         dataSet=""
         setID={setID}
         setScreen={setScreen}
+        WishingList={WishingList}
         setWishingList={setWishingList}
       />
 
@@ -67,6 +68,7 @@ const MiddleSection = ({ setScreen, setID, setWishingList }) => {
         dataSet=""
         setScreen={setScreen}
         setID={setID}
+        WishingList={WishingList}
         setWishingList={setWishingList}
       />
       <Category
@@ -75,6 +77,7 @@ const MiddleSection = ({ setScreen, setID, setWishingList }) => {
         dataSet=""
         setID={setID}
         setScreen={setScreen}
+        WishingList={WishingList}
         setWishingList={setWishingList}
       />
       <Div>
@@ -87,6 +90,7 @@ const MiddleSection = ({ setScreen, setID, setWishingList }) => {
         dataSet=""
         setID={setID}
         setScreen={setScreen}
+        WishingList={WishingList}
         setWishingList={setWishingList}
       />
       <Category
@@ -95,6 +99,7 @@ const MiddleSection = ({ setScreen, setID, setWishingList }) => {
         dataSet=""
         setID={setID}
         setScreen={setScreen}
+        WishingList={WishingList}
         setWishingList={setWishingList}
       />
     </div>

@@ -36,12 +36,14 @@ const Cards = ({ data }) => {
     color: salmon;
   `;
 
-  return (
+  return typeof data !== "undefined" && data !== null ? (
     <div>
       <P id={data.id}>{data.name}</P>
       <P1 id={data.id}>{data.listprice} kr</P1>
       <P2 id={data.id}>{data.saleprice} kr</P2>
     </div>
+  ) : (
+    <div>No product data</div>
   );
 };
 

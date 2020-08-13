@@ -108,7 +108,7 @@ const Product = ({
       <Bg>
         <Div2>
           <form onChange={handleSizeChange}>
-            <Select id="size" value={size}>
+            <Select id="size" defaultValue={size}>
               <Option value="0">Choose Size</Option>
               <Option value="36">36</Option>
               <Option value="37">37</Option>

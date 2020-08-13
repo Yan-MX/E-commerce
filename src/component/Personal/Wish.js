@@ -75,7 +75,7 @@ const Wish = ({ WishingList, setID, setScreen }) => {
     <div>
       {render()}
       {array1.map((data) => (
-        <Container onClick={ClickHandler} id={data.id}>
+        <Container onClick={ClickHandler} id={data.id} key={data.id}>
           <Img id={data.id} src={data.images.split(",")[0].slice(1, -1)} />
           <Div2 id={data.id}>
             <P id={data.id}>{data.name}</P>

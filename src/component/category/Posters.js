@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { useMediaQuery } from "react-responsive";
 import { FcLike, FcLikePlaceholder } from "react-icons/fc";
 
-const Posters = ({ bg, data, setWishingList }) => {
+const Posters = ({ bg, data, WishingList, setWishingList }) => {
   const [like, setLike] = useState(false);
   const isMediumScreen = useMediaQuery({
     query: "(min-width: 800px)",
@@ -30,13 +30,16 @@ const Posters = ({ bg, data, setWishingList }) => {
   `;
   const ClickHandler = (e) => {
     // Fix the code later
-    like
-      ? setWishingList((wishinglist) =>
-          wishinglist.filter((d) => !d.id === e.target.id)
-        )
-      : setWishingList((wishinglist) => wishinglist.push(e.target.id));
-    console.log("handler a click of like");
-    setLike((value) => !value);
+    if (typeof WishingList !== "undefined" && WishingList !== null) {
+      console.log("WishingList", WishingList);
+      like
+        ? setWishingList((wishinglist) =>
+            wishinglist.filter((d) => d !== data.id)
+          )
+        : setWishingList((wishinglist) => wishinglist.concat(data.id));
+      console.log("handler a click of like");
+      setLike((value) => !value);
+    }
   };
   return typeof data !== "undefined" && data !== null ? (
     <BigContainer>
