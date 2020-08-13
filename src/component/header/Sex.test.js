@@ -11,6 +11,6 @@ describe("Test component", () => {
     const { getByText } = render(<Sex />);
     expect(getByText("WOMEN")).toBeInTheDocument();
     expect(getByText("MEN")).toBeInTheDocument();
-    expect(getByText("CHILDREN")).toBeInTheDocument();
+    expect(getByText("HOME")).toBeInTheDocument();
   });
 });
