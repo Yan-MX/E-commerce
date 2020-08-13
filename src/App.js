@@ -9,11 +9,13 @@ import ProductInfo from "./component/product/productInfo";
 import ScrollToTop from "react-scroll-to-top";
 import Wish from "./component/Personal/Wish";
 import Cart from "./component/Personal/Cart";
+import SearchQueryProcessor from "./component/category/SearchQueryProcessor";
 function App() {
   const [screen, setScreen] = useState("main");
   const [id, setID] = useState("");
   const [WishingList, setWishingList] = useState([]);
   const [cart, setCart] = useState([]);
+  const [query, setQuery] = useState("");
   const show = () => {
     console.log("set screen to ", screen);
     switch (screen) {
@@ -25,7 +27,6 @@ function App() {
               setID={setID}
               setWishingList={setWishingList}
             />
-            <Giftcard />
           </div>
         );
       case "product":
@@ -48,15 +49,22 @@ function App() {
               setID={setID}
               setScreen={setScreen}
             />
-            <Giftcard />
           </div>
         );
       case "cart":
         return (
           <div>
             <Cart cart={cart} setID={setID} setScreen={setScreen} />
-            <Giftcard />
           </div>
+        );
+      case "search":
+        return (
+          <SearchQueryProcessor
+            query={query}
+            setID={setID}
+            setScreen={setScreen}
+            setWishingList={setWishingList}
+          />
         );
       default:
         return <p>hahah</p>;
@@ -65,9 +73,9 @@ function App() {
   return (
     <div className="App">
       <ScrollToTop smooth color="salmon" />
-      <Header setScreen={setScreen} />
+      <Header setScreen={setScreen} setQuery={setQuery} />
       {show()}
-
+      <Giftcard />
       <Footer />
     </div>
   );

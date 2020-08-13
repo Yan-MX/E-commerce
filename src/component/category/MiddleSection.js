@@ -51,6 +51,7 @@ const MiddleSection = ({ setScreen, setID, setWishingList }) => {
       <Category
         num1="0"
         num2="8"
+        dataSet=""
         setID={setID}
         setScreen={setScreen}
         setWishingList={setWishingList}
@@ -63,6 +64,7 @@ const MiddleSection = ({ setScreen, setID, setWishingList }) => {
       <Category
         num1="34"
         num2="42"
+        dataSet=""
         setScreen={setScreen}
         setID={setID}
         setWishingList={setWishingList}
@@ -70,6 +72,7 @@ const MiddleSection = ({ setScreen, setID, setWishingList }) => {
       <Category
         num1="50"
         num2="58"
+        dataSet=""
         setID={setID}
         setScreen={setScreen}
         setWishingList={setWishingList}
@@ -81,6 +84,7 @@ const MiddleSection = ({ setScreen, setID, setWishingList }) => {
       <Category
         num1="70"
         num2="78"
+        dataSet=""
         setID={setID}
         setScreen={setScreen}
         setWishingList={setWishingList}
@@ -88,6 +92,7 @@ const MiddleSection = ({ setScreen, setID, setWishingList }) => {
       <Category
         num1="80"
         num2="88"
+        dataSet=""
         setID={setID}
         setScreen={setScreen}
         setWishingList={setWishingList}

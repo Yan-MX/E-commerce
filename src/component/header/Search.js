@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "@emotion/styled";
-import { FcSearch } from "react-icons/fc";
-const Search = () => {
+
+const Search = ({ setScreen, setQuery }) => {
+  const [input, setInput] = useState("");
+
   let Container = styled.div`
     display: flex;
     flex-direction: row;
@@ -13,11 +15,42 @@ const Search = () => {
     margin-right: 10px;
     border-radius: 5px;
   `;
+  let Button = styled.button`
+    background-color: rgba(0, 80, 134, 1);
+    color: white;
+    border-radius: 5px;
+  `;
+  const handlerSearch = (e) => {
+    e.preventDefault();
+    console.log("change handled");
+
+    setQuery(input);
+    setInput("");
+    setScreen("search");
+  };
+
+  const handlerChange = (e) => {
+    setInput(e.target.value);
+  };
+  const inputRef = useRef(null); //prevent input lose focus
+  useEffect(() => {
+    if ((inputRef === null) | (inputRef.current === null)) {
+      console.log("null");
+    } else {
+      inputRef.current.focus();
+    }
+  }, [input]);
   return (
     <Container>
-      <form>
-        <Input placeholder="Search" />
-        <FcSearch />
+      <form onSubmit={handlerSearch}>
+        <Input
+          ref={inputRef}
+          type="text"
+          placeholder="Search"
+          value={input}
+          onChange={handlerChange}
+        />
+        <Button type="submit">Search</Button>
       </form>
     </Container>
   );

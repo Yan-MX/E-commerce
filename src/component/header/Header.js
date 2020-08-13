@@ -10,7 +10,7 @@ import { useMediaQuery } from "react-responsive";
 import Search from "./Search";
 import Section from "./Section";
 
-function Header({ setScreen }) {
+function Header({ setScreen, setQuery }) {
   const isBiggerScreen = useMediaQuery({
     query: "(min-width: 800px)",
   });
@@ -60,7 +60,7 @@ function Header({ setScreen }) {
         <div>
           <Slogan />
           <Sections>
-            <Sex />
+            <Sex setScreen={setScreen} setQuery={setQuery} />
             <Img src={Logo} alt="logo" onClick={ClickHandler} />
             <Container>
               <MyAccount setScreen={setScreen} />
@@ -69,8 +69,8 @@ function Header({ setScreen }) {
             </Container>
           </Sections>
           <Sections>
-            <Section />
-            <Search />
+            <Section setScreen={setScreen} setQuery={setQuery} />
+            <Search setScreen={setScreen} setQuery={setQuery} />
           </Sections>
         </div>
       )}
@@ -78,7 +78,7 @@ function Header({ setScreen }) {
         <div>
           <Slogan />
           <Sections2>
-            <Sex />
+            <Sex setScreen={setScreen} setQuery={setQuery} />
             <ImgSmall src={Logo} alt="logo" onClick={ClickHandler} />
           </Sections2>
           <Sections2>
@@ -87,8 +87,8 @@ function Header({ setScreen }) {
             <Cart setScreen={setScreen} />
           </Sections2>
           <Sections2>
-            <Section />
-            <Search />
+            <Section setScreen={setScreen} setQuery={setQuery} />
+            <Search setScreen={setScreen} setQuery={setQuery} />
           </Sections2>
         </div>
       )}

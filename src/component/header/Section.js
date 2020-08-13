@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { FcList } from "react-icons/fc";
 import { useMediaQuery } from "react-responsive";
 
-const Section = () => {
+const Section = ({ setScreen, setQuery }) => {
   const isBiggerScreen = useMediaQuery({
     query: "(min-width: 800px)",
   });
@@ -65,16 +65,36 @@ const Section = () => {
   let P = styled.p`
     margin-right: 30px;
   `;
+  const clickHandler = (e) => {
+    e.preventDefault();
+    setQuery("new");
+    setScreen("search");
+  };
+  const clickHandler2 = (e) => {
+    e.preventDefault();
+    setQuery("run");
+    setScreen("search");
+  };
+  const clickHandler3 = (e) => {
+    e.preventDefault();
+    setQuery("train");
+    setScreen("search");
+  };
+  const clickHandler4 = (e) => {
+    e.preventDefault();
+    setQuery("slipper");
+    setScreen("search");
+  };
   return (
     <div>
       {isBiggerScreen && (
         <Container>
-          <P>
+          <P onClick={clickHandler}>
             <ins>New Arrivals</ins>
           </P>
-          <P>Running</P>
-          <P>Training</P>
-          <P>On Sale</P>
+          <P onClick={clickHandler2}>Running</P>
+          <P onClick={clickHandler3}>Training</P>
+          <P onClick={clickHandler4}>In Season</P>
         </Container>
       )}
       {isMediumScreen && (
@@ -86,10 +106,18 @@ const Section = () => {
                 Category
               </button>
               <div className="dropdown-content">
-                <a href="#section">New Arrival</a>
-                <a href="#section">Running</a>
-                <a href="#section">Training</a>
-                <a href="#section">On Sale</a>
+                <a href="#section" onClick={clickHandler}>
+                  New Arrival
+                </a>
+                <a href="#section" onClick={clickHandler2}>
+                  Running
+                </a>
+                <a href="#section" onClick={clickHandler3}>
+                  Training
+                </a>
+                <a href="#section" onClick={clickHandler4}>
+                  In Season
+                </a>
               </div>
             </div>
           </Container2>
