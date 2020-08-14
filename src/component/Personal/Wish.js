@@ -8,17 +8,19 @@ const Wish = ({ WishingList, setID, setScreen }) => {
   });
   const a = "row";
   const b = "column";
-
+  const f = "70%";
+  const f2 = "90%";
   let Container = styled.div`
     display: flex;
     flex-direction: ${isMediumScreen ? a : b};
     height: 35vh;
-    width: 70%;
+    width: ${isMediumScreen ? f : f2};
     margin: auto;
-    border: 1px solid grey;
-    background-color: rgba(0, 80, 134, 0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 80, 134, 0.2);
+    background-color: white;
     border-radius: 5px;
-    align-self: center;
+    justify-content: space-around;
+    align-items: center;
     margin-top: 5vh;
     margin-bottom: 5vh;
   `;
@@ -48,12 +50,15 @@ const Wish = ({ WishingList, setID, setScreen }) => {
     justify-content: center;
     align-items: left;
   `;
+  const a1 = "200px";
+  const b1 = "120px";
+  const c = "200px";
+  const d = "120px";
   let Img = styled.img`
-    margin: 5vw;
-    width: 30%;
-    height: 50%;
-    border-radius: 5px;
-    border: 1px dotted grey;
+    margin: 20px;
+    width: ${isMediumScreen ? c : d};
+    height: ${isMediumScreen ? a1 : b1};
+    box-shadow: 0px 8px 16px 0px rgba(0, 80, 134, 0.2);
   `;
 
   let array1 = [];
@@ -63,17 +68,18 @@ const Wish = ({ WishingList, setID, setScreen }) => {
     } else {
       WishingList.map((item) => {
         array1.push(Data.filter((data) => data.id === item)[0]);
-        return array1;
       });
     }
   };
   const ClickHandler = (e) => {
     setID(e.target.id);
     setScreen("product");
+    e.preventDefault();
   };
   return (
     <div>
       {render()}
+      <h4>Your Wishing List: </h4>
       {array1.map((data) => (
         <Container onClick={ClickHandler} id={data.id} key={data.id}>
           <Img id={data.id} src={data.images.split(",")[0].slice(1, -1)} />

@@ -33,6 +33,8 @@ const MiddleSection = ({ setScreen, setID, WishingList, setWishingList }) => {
     border-radius: 5px;
     text-transform: uppercase;
     margin-top: 30px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   `;
   let Img = styled.img`
     width: 100%;

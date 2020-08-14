@@ -21,7 +21,8 @@ const Giftcard = () => {
     position: absolute;
     top: 30%;
     left: 30%;
-
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     transform: translate(-50%, -50%);
     color: white;
     margin-left: 50px;

@@ -12,12 +12,14 @@ const ProductInfo = ({ cart, setCart, id, setWishingList, WishingList }) => {
   const [like, setLike] = useState(false);
   const a = "row";
   const b = "column";
-  const c = "50%;";
+  const a1 = "space-around";
+  const b1 = "center";
+  const c = "90%;";
   const d = "100%";
   let Container = styled.div`
-    margin: 100px;
     width: 90%;
-    justify-content: space-between;
+    justify-content: ${isMidiumScreen ? a1 : b1};
+    align-items: ${isMidiumScreen ? a1 : b1};
     display: flex;
     flex-direction: ${isMidiumScreen ? a : b};
   `;
