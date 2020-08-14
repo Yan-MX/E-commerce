@@ -70,6 +70,7 @@ const Cart = ({ cart, setID, setScreen }) => {
         let a = Data.filter((data) => data.id === item.id)[0];
         a.size = item.size;
         array1.push(a);
+        return array1;
       });
     }
   };
