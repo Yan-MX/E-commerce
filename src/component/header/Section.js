@@ -64,6 +64,9 @@ const Section = ({ setScreen, setQuery }) => {
   `;
   let P = styled.p`
     margin-right: 30px;
+    &:hover {
+      color: rgb(0, 8, 134);
+    }
   `;
   const clickHandler = (e) => {
     e.preventDefault();

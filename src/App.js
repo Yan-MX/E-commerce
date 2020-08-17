@@ -39,6 +39,8 @@ function App() {
               WishingList={WishingList}
               cart={cart}
               setCart={setCart}
+              setID={setID}
+              setScreen={setScreen}
             />
           </div>
         );

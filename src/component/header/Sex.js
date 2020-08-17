@@ -9,6 +9,9 @@ const Sex = ({ setScreen, setQuery }) => {
   `;
   let P = styled.p`
     margin-right: 30px;
+    &:hover {
+      color: salmon;
+    }
   `;
   const ClickHandler = (e) => {
     setScreen("main");
@@ -27,7 +30,7 @@ const Sex = ({ setScreen, setQuery }) => {
       <P>|</P>
       <P onClick={SearchHandler}>WOMEN</P>
       <P>|</P>
-      <p onClick={SearchHandler2}>MEN</p>
+      <P onClick={SearchHandler2}>MEN</P>
     </Container>
   );
 };

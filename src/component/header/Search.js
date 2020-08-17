@@ -19,6 +19,10 @@ const Search = ({ setScreen, setQuery }) => {
     background-color: rgba(0, 80, 134, 1);
     color: white;
     border-radius: 5px;
+    &:hover {
+      color: salmon;
+      background-color: white;
+    }
   `;
   const handlerSearch = (e) => {
     e.preventDefault();

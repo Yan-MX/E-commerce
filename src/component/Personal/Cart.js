@@ -24,6 +24,20 @@ const Cart = ({ cart, setID, setScreen }) => {
     margin-bottom: 5vh;
     align-items: center;
   `;
+  let ContainerB = styled.div`
+    display: flex;
+    flex-direction: column-reverse;
+    height: 35vh;
+    width: ${isMediumScreen ? f : f2};
+    margin: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 80, 134, 0.2);
+    background-color: white;
+    border-radius: 5px;
+    justify-content: space-around;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    align-items: center;
+  `;
   let P = styled.p`
     font-size: 1.2vw;
     text-transform: uppercase;
@@ -60,7 +74,9 @@ const Cart = ({ cart, setID, setScreen }) => {
     height: ${isMediumScreen ? a1 : b1};
     box-shadow: 0px 8px 16px 0px rgba(0, 80, 134, 0.2);
   `;
-
+  let piece = 0;
+  let sum = 0;
+  let save = 0;
   let array1 = [];
   const render = () => {
     if (cart.length === 0) {
@@ -70,19 +86,36 @@ const Cart = ({ cart, setID, setScreen }) => {
         let a = Data.filter((data) => data.id === item.id)[0];
         a.size = item.size;
         array1.push(a);
+        sum += a.saleprice;
+        save += a.listprice - a.saleprice;
         return array1;
       });
+      piece = array1.length;
     }
   };
+  let Div3 = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  `;
   const ClickHandler = (e) => {
     setID(e.target.id);
     setScreen("product");
     e.preventDefault();
   };
+
   return (
-    <div>
+    <ContainerB>
       {render()}
       <h4>Your Shopping Cart: </h4>
+      <Div3>
+        <p> You will save {save} Kr</p>
+        <p>
+          Pieces: {piece} | Sum: {sum} kr
+        </p>
+      </Div3>
+
       {array1.map((data) => (
         <Container onClick={ClickHandler} id={data.id}>
           <Img id={data.id} src={data.images.split(",")[0].slice(1, -1)} />
@@ -97,7 +130,7 @@ const Cart = ({ cart, setID, setScreen }) => {
           </Div2>
         </Container>
       ))}
-    </div>
+    </ContainerB>
   );
 };
 

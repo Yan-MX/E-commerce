@@ -5,7 +5,16 @@ import styled from "@emotion/styled";
 import Product from "./Product";
 import { useMediaQuery } from "react-responsive";
 import Data1 from "../../mockup/Data";
-const ProductInfo = ({ cart, setCart, id, setWishingList, WishingList }) => {
+import Category from "../category/Category";
+const ProductInfo = ({
+  cart,
+  setCart,
+  id,
+  setWishingList,
+  WishingList,
+  setID,
+  setScreen,
+}) => {
   const isMidiumScreen = useMediaQuery({
     query: "(min-width: 800px)",
   });
@@ -30,30 +39,42 @@ const ProductInfo = ({ cart, setCart, id, setWishingList, WishingList }) => {
   let data = Data1.filter((data) => {
     return data.id === id;
   })[0];
-  console.log(id);
+
   return typeof data !== "undefined" && data !== null ? (
-    <Container>
-      <Left>
-        <Carousel>
-          {data.images.split(",").map((pic) => (
-            <div key={pic}>
-              <img src={pic.slice(1, -1)} alt="product" />
-              <p className="legend"></p>
-            </div>
-          ))}
-        </Carousel>
-      </Left>
-      <Left>
-        <Product
-          like={like}
-          setLike={setLike}
-          data={data}
-          setWishingList={setWishingList}
-          WishingList={WishingList}
-          setCart={setCart}
-        />
-      </Left>
-    </Container>
+    <div>
+      <Container>
+        <Left>
+          <Carousel>
+            {data.images.split(",").map((pic) => (
+              <div key={pic}>
+                <img src={pic.slice(1, -1)} alt="product" />
+                <p className="legend"></p>
+              </div>
+            ))}
+          </Carousel>
+        </Left>
+        <Left>
+          <Product
+            like={like}
+            setLike={setLike}
+            data={data}
+            setWishingList={setWishingList}
+            WishingList={WishingList}
+            setCart={setCart}
+          />
+        </Left>
+      </Container>
+      <h4>You may also like: </h4>
+      <Category
+        num1={data.key > 10 ? data.key - 9 : 0}
+        num2={data.key > 10 ? data.key : 9}
+        dataSet=""
+        setID={setID}
+        setScreen={setScreen}
+        WishingList={WishingList}
+        setWishingList={setWishingList}
+      />
+    </div>
   ) : (
     <Container>No product data</Container>
   );
