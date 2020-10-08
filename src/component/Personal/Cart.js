@@ -95,7 +95,6 @@ const Cart = ({ cart, setID, setScreen }) => {
     setScreen("product");
     e.preventDefault();
   };
-
   return (
     <ContainerB>
       {render()}
@@ -124,5 +123,4 @@ const Cart = ({ cart, setID, setScreen }) => {
     </ContainerB>
   );
 };
-
 export default Cart;
