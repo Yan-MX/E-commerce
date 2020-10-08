@@ -35,11 +35,11 @@ const Product = ({
     font-weight: bold;
   `;
   let P1 = styled.p`
-    font-size: 1vw;
+    font-size: 1.5vw;
     text-decoration: line-through;
   `;
   let P2 = styled.p`
-    font-size: 1.5vw;
+    font-size: 2.5vw;
     color: salmon;
   `;
   let Div = styled.div`
@@ -61,8 +61,8 @@ const Product = ({
     text-align: center;
     border: 1px solid rgba(0, 80, 134, 0.7);
     border-radius: 5px;
-    font-size: 2.4vh;
-    height: 8vh;
+    font-size: 1.5vw;
+    height: 4vw;
   `;
   let Option = styled.option`
     text-align: center;
@@ -72,9 +72,9 @@ const Product = ({
     width: 18vw;
     background-color: rgb(0, 80, 134);
     color: whitesmoke;
-    font-size: 2.4vh;
+    font-size: 1.5vw;
     border-radius: 5px;
-    height: 8vh;
+    height: 4vw;
   `;
   const ClickHandler = () => {
     setLike((a) => !a);
@@ -122,7 +122,7 @@ const Product = ({
         <Div2>
           <Button onClick={addToCart}>Add to Cart</Button>
           <SContainer onClick={ClickHandler}>
-            <IconContext.Provider value={{ size: "3em" }}>
+            <IconContext.Provider value={{ size: "2em" }}>
               {WishingList.includes(data.id) ? (
                 <FcLike />
               ) : (

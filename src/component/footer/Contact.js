@@ -7,10 +7,11 @@ const Contacts = () => {
   });
   const row = "row";
   const column = "column";
+  const big = "1.5vw";
+  const small = "3vw";
   let BigContainer = styled.div`
     display: flex;
     flex-direction: ${isBiggerScreen ? row : column};
-
     justify-content: space-around;
     padding: 100px;
   `;
@@ -26,11 +27,11 @@ const Contacts = () => {
   `;
   let Alink = styled.a`
     color: white;
-    font-size: 2.4vh;
+    font-size: ${isBiggerScreen ? big : small};
   `;
   let P = styled.div`
     font-weight: bold;
-    font-size: 2.6vh;
+    font-size: 2vw;
     color: whitesmoke;
   `;
   return (

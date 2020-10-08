@@ -8,35 +8,29 @@ const Cart = ({ cart, setID, setScreen }) => {
   });
   const a = "row";
   const b = "column";
-  const f = "70%";
-  const f2 = "90%";
-  let Container = styled.div`
-    display: flex;
-    flex-direction: ${isMediumScreen ? a : b};
-    height: 35vh;
-    width: ${isMediumScreen ? f : f2};
-    margin: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0, 80, 134, 0.2);
-    background-color: white;
-    border-radius: 5px;
-    justify-content: space-around;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    align-items: center;
-  `;
+  const f = "50%";
+  const f2 = "100%";
   let ContainerB = styled.div`
     display: flex;
     flex-direction: column-reverse;
-    height: 35vh;
     width: ${isMediumScreen ? f : f2};
     margin: auto;
+    border-radius: 5px;
+    justify-content: space-around;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+    align-items: center;
+  `;
+  let Container = styled.div`
+    display: flex;
+    flex-direction: ${isMediumScreen ? a : b};
+    width: ${isMediumScreen ? f2 : f};
     box-shadow: 0px 8px 16px 0px rgba(0, 80, 134, 0.2);
     background-color: white;
     border-radius: 5px;
     justify-content: space-around;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
     align-items: center;
+    margin: 1vw 0;
   `;
   let P = styled.p`
     font-size: 1.2vw;
@@ -64,15 +58,12 @@ const Cart = ({ cart, setID, setScreen }) => {
     justify-content: center;
     align-items: left;
   `;
-  const a1 = "200px";
-  const b1 = "120px";
-  const c = "200px";
-  const d = "120px";
+  const a1 = "15vw";
+  const b1 = "30vw";
+
   let Img = styled.img`
-    margin: 20px;
-    width: ${isMediumScreen ? c : d};
+    width: ${isMediumScreen ? a1 : b1};
     height: ${isMediumScreen ? a1 : b1};
-    box-shadow: 0px 8px 16px 0px rgba(0, 80, 134, 0.2);
   `;
   let piece = 0;
   let sum = 0;
@@ -108,13 +99,6 @@ const Cart = ({ cart, setID, setScreen }) => {
   return (
     <ContainerB>
       {render()}
-      <h4>Your Shopping Cart: </h4>
-      <Div3>
-        <p> You will save {save} Kr</p>
-        <p>
-          Pieces: {piece} | Sum: {sum} kr
-        </p>
-      </Div3>
 
       {array1.map((data) => (
         <Container onClick={ClickHandler} id={data.id}>
@@ -130,6 +114,13 @@ const Cart = ({ cart, setID, setScreen }) => {
           </Div2>
         </Container>
       ))}
+      <Div3>
+        <p> You will save {save} Kr </p>
+        <p>
+          Pieces: {piece} | Sum: {sum} kr
+        </p>
+      </Div3>
+      <h4>Your Shopping Cart: </h4>
     </ContainerB>
   );
 };

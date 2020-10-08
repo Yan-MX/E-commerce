@@ -35,6 +35,11 @@ const ProductInfo = ({
   let Left = styled.div`
     width: ${isMidiumScreen ? d : c};
   `;
+  let H3 = styled.h2`
+    text-align: left;
+    font-size: 2vw;
+    margin: 4vw 4vw;
+  `;
 
   let data = Data1.filter((data) => {
     return data.id === id;
@@ -64,7 +69,7 @@ const ProductInfo = ({
           />
         </Left>
       </Container>
-      <h4>You may also like: </h4>
+      <H3>You may also like: </H3>
       <Category
         num1={data.key > 10 ? data.key - 9 : 0}
         num2={data.key > 10 ? data.key : 9}

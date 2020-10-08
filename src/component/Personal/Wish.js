@@ -8,21 +8,29 @@ const Wish = ({ WishingList, setID, setScreen }) => {
   });
   const a = "row";
   const b = "column";
-  const f = "70%";
-  const f2 = "90%";
+  const f = "50%";
+  const f2 = "100%";
+  let ContainerB = styled.div`
+    display: flex;
+    flex-direction: column-reverse;
+    width: ${isMediumScreen ? f : f2};
+    margin: auto;
+    border-radius: 5px;
+    justify-content: space-around;
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+    align-items: center;
+  `;
   let Container = styled.div`
     display: flex;
     flex-direction: ${isMediumScreen ? a : b};
-    height: 35vh;
-    width: ${isMediumScreen ? f : f2};
-    margin: auto;
+    width: ${isMediumScreen ? f2 : f};
     box-shadow: 0px 8px 16px 0px rgba(0, 80, 134, 0.2);
     background-color: white;
     border-radius: 5px;
     justify-content: space-around;
     align-items: center;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
+    margin: 1vw 0;
   `;
   let P = styled.p`
     font-size: 1.2vw;
@@ -50,15 +58,12 @@ const Wish = ({ WishingList, setID, setScreen }) => {
     justify-content: center;
     align-items: left;
   `;
-  const a1 = "200px";
-  const b1 = "120px";
-  const c = "200px";
-  const d = "120px";
+  const a1 = "15vw";
+  const b1 = "30vw";
+
   let Img = styled.img`
-    margin: 20px;
-    width: ${isMediumScreen ? c : d};
+    width: ${isMediumScreen ? a1 : b1};
     height: ${isMediumScreen ? a1 : b1};
-    box-shadow: 0px 8px 16px 0px rgba(0, 80, 134, 0.2);
   `;
 
   let array1 = [];
@@ -78,9 +83,8 @@ const Wish = ({ WishingList, setID, setScreen }) => {
     e.preventDefault();
   };
   return (
-    <div>
+    <ContainerB>
       {render()}
-      <h4>Your Wishing List: </h4>
       {array1.map((data) => (
         <Container onClick={ClickHandler} id={data.id} key={data.id}>
           <Img id={data.id} src={data.images.split(",")[0].slice(1, -1)} />
@@ -94,7 +98,8 @@ const Wish = ({ WishingList, setID, setScreen }) => {
           </Div2>
         </Container>
       ))}
-    </div>
+      <h4>Your Wishing List: </h4>
+    </ContainerB>
   );
 };
 
