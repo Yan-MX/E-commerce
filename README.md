@@ -1,80 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a Ecommerce website built with React. 
+please visit:
+http://yan-ecommerce.herokuapp.com/
 
-## Available Scripts
 
-In the project directory, you can run:
+This is a website I built with Javascript and React framework. It is a responsive, interactive E-commerce shop. I used React Hooks (useState, useRef, useEffect) and many libraries included but not restricted to react-icons, react-responsive, Emotion. I use mockup data from a Json file which consists of 100 items, I cleaned and sorted the data as needed. With the help of a back-end developer, we were also able to test my code and deploy the website on Heroku. This project is still ongoing and I built it to this stage using only 4 days of time.
 
-### `npm run startd`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
-## CI with [Travis-CI.org](https://travis-ci.org/) and auto-deploy to Heroku
-
-This article contain a good guide to set up CI https://dev.to/michalhonc/set-up-continuous-deploy-for-free-with-react-github-travis-and-heroku-381b.
-
-> Note that there is a bug in the article regarding how to generate api-key value, and you will get **invalid option "--api_key="** error in Travis when deploying to Heroku.
-
-The correct way to generate the api-key can be found in https://www.johnvincent.io/general/travis-heroku-ci/ under **Travis Build Error** section
-
-> Also note that it is important to use serve package, otherwise Heroku deployment would fail with **heroku: at=error code=H10 desc="App crashed"**
-
-This change will break the local npm start, so the default npm start is changed to **npm run startd** instead for local testing.
+Functions and features implemented
+➔ Navigation links on the header
+➔ Search bar
+➔ Pomeranian logo can bring customers back to the main page
+➔ A horizontal scroll view of products on main pages
+➔ Carousel slider of a product pictures on product page
+➔ Click product picture to enter the product page
+➔ Choose size of the product and add item in shopping cart
+➔ Add/remove an item into wishing list by clicking the heart icon on product page ➔ A floating back to top button on the left bottom of the page
+➔ Click wishing list to see all the item in wishing list
+➔ Click shopping cart icon to check items in shopping cart
