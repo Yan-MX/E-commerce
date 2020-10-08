@@ -98,7 +98,6 @@ const Cart = ({ cart, setID, setScreen }) => {
   return (
     <ContainerB>
       {render()}
-
       {array1.map((data) => (
         <Container onClick={ClickHandler} id={data.id}>
           <Img id={data.id} src={data.images.split(",")[0].slice(1, -1)} />
