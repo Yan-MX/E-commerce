@@ -13,6 +13,7 @@ This is a Ecommerce website built with React.
 ##### Carousel slider of a product pictures on product page
 ##### Click product picture to enter the product page
 ##### Choose size of the product and add item in shopping cart
-##### Add/remove an item into wishing list by clicking the heart icon on product page ➔ A floating back to top button on the left bottom of the page
+##### Add/remove an item into wishing list by clicking the heart icon on product page 
+##### A floating back to top button on the left bottom of the page
 ##### Click wishing list to see all the item in wishing list
 ##### Click shopping cart icon to check items in shopping cart
