@@ -17,3 +17,5 @@ This is a Ecommerce website built with React.
 ##### A floating back to top button on the left bottom of the page
 ##### Click wishing list to see all the item in wishing list
 ##### Click shopping cart icon to check items in shopping cart
+
+The pomeranian icon is a free icon from https://www.flaticon.com/home thanks!
